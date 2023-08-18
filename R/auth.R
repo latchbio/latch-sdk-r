@@ -4,10 +4,12 @@
 #'
 #' @keywords internal
 #' @return String value of the `Authorization` HTTP header.
-#' @examplesIf interactive()
+#' @examples
+#' \dontrun{
 #' httr2::request("https://vacuole.latch.bio") %>%
 #'   httr2::req_headers(Authorization = auth_header()) %>%
 #'   httr2::req_dry_run()
+#' }
 auth_header <- function() {
   exec_token <- Sys.getenv("FLYTE_INTERNAL_EXECUTION_ID", unset = NA)
   if (!is_na(exec_token)) {

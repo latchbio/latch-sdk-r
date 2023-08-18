@@ -1,5 +1,5 @@
 Package: latch
-Title: LatchBio platform SDK for the R programming language
+Title: LatchBio Platform SDK for the R Programming Language
 Version: 0.1.0
 Authors@R:
     c(
@@ -8,7 +8,7 @@ Authors@R:
         person(given = "LatchBio, Inc.",
              role = c("cph", "fnd"))
     )
-Description: Provides programmatic access to the LatchBio platform (https://latch.bio).
+Description: Provides programmatic access to the LatchBio platform <https://latch.bio>.
 URL: https://github.com/latchbio/latch-sdk-r, https://latchbio.github.io/latch-sdk-r/
 BugReports: https://github.com/latchbio/latch-sdk-r/issues
 License: CC0

@@ -37,8 +37,10 @@ Account <- R6::R6Class("Account",
     #' @description
     #' Print a human-readable representation of this account.
     #' @examples
+    #' \dontrun{
     #' acc <- Account$current()
     #' acc$print()
+    #' }
     print = function() {
       display_name <- self$get_display_name(load_if_missing = FALSE)
 
@@ -61,11 +63,13 @@ Account <- R6::R6Class("Account",
     #' making a network request.
     #'
     #' Always makes a network request.
-    #' @examplesIf interactive()
+    #' @examples
+    #' \dontrun{
     #' acc <- Account$current()
     #' acc$print()
     #' acc$load()
     #' acc$print()
+    #' }
     load = function() {
       data <- vacuole_gql_perform("
         query AccountQuery($ownerId: BigInt!) {
@@ -132,7 +136,7 @@ Account <- R6::R6Class("Account",
     #' Display names are *not unique* and *must never be used as identifiers*.
     #' Use `id` instead.
     #'
-    #' For users, this is the user's full name as reported by the authenitcation
+    #' For users, this is the user's full name as reported by the authentication
     #' provider.
     #'
     #' For teams, this is the team display name.
@@ -142,9 +146,11 @@ Account <- R6::R6Class("Account",
     #' If `FALSE`, return `NULL` if not in cache.
     #'
     #' @return String value of the display name.
-    #' @examplesIf interactive()
+    #' @examples
+    #' \dontrun{
     #' acc <- Account$current()
     #' acc$get_display_name()
+    #' }
     get_display_name = function(load_if_missing = TRUE) {
       check_logical(load_if_missing)
 
@@ -167,9 +173,11 @@ Account <- R6::R6Class("Account",
     #' If `FALSE`, return `NULL` if not in cache.
     #'
     #' @return List of [projects][RegistryProject] owned by this workspace.
-    #' @examplesIf interactive()
+    #' @examples
+    #' \dontrun{
     #' acc <- Account$current()
     #' acc$list_registry_projects()
+    #' }
     list_registry_projects = function(load_if_missing = TRUE) {
       check_logical(load_if_missing)
 
@@ -200,8 +208,10 @@ Account <- R6::R6Class("Account",
 #' @name Account$current
 #' @family Accounts APIs
 #' @return [Account] for the current workspace.
-#' @examplesIf interactive()
+#' @examples
+#' \dontrun{
 #' Account$current()
+#' }
 Account$current <- function() {
   data <- vacuole_gql_perform("
     query accountInfoQuery {
