@@ -17,9 +17,9 @@ auth_header <- function() {
   }
 
   sdk_token <- try_fetch(
-    readr::read_file("~/.latch/token"),
+    readChar("~/.latch/token", 9999),
     error = function(cnd) {
-      if (stringr::str_detect(cnd$message, "does not exist")) {
+      if (grepl("does not exist", cnd$message)) {
         return(NA)
       }
       abort(c(
