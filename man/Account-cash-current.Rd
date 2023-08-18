@@ -15,9 +15,9 @@ current setting of \verb{latch workspace}, which defaults to the user's personal
 workspace.
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontrun{
 Account$current()
-\dontshow{\}) # examplesIf}
+}
 }
 \seealso{
 Other Accounts APIs: 

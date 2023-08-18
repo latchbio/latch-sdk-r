@@ -13,27 +13,44 @@ produce errors.
 }
 \examples{
 Account$new("1")
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-acc <- Account$current()
-acc$print()
-acc$load()
-acc$print()
-\dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-acc <- Account$current()
-acc$get_display_name()
-\dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-acc <- Account$current()
-acc$list_registry_projects()
-\dontshow{\}) # examplesIf}
 
 ## ------------------------------------------------
 ## Method `Account$print`
 ## ------------------------------------------------
 
+\dontrun{
 acc <- Account$current()
 acc$print()
+}
+
+## ------------------------------------------------
+## Method `Account$load`
+## ------------------------------------------------
+
+\dontrun{
+acc <- Account$current()
+acc$print()
+acc$load()
+acc$print()
+}
+
+## ------------------------------------------------
+## Method `Account$get_display_name`
+## ------------------------------------------------
+
+\dontrun{
+acc <- Account$current()
+acc$get_display_name()
+}
+
+## ------------------------------------------------
+## Method `Account$list_registry_projects`
+## ------------------------------------------------
+
+\dontrun{
+acc <- Account$current()
+acc$list_registry_projects()
+}
 }
 \seealso{
 Other Accounts APIs: 
@@ -86,8 +103,10 @@ Print a human-readable representation of this account.
 
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{acc <- Account$current()
+\preformatted{\dontrun{
+acc <- Account$current()
 acc$print()
+}
 }
 \if{html}{\out{</div>}}
 
@@ -108,6 +127,19 @@ Always makes a network request.
 \if{html}{\out{<div class="r">}}\preformatted{Account$load()}\if{html}{\out{</div>}}
 }
 
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{\dontrun{
+acc <- Account$current()
+acc$print()
+acc$load()
+acc$print()
+}
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Account-get_display_name"></a>}}
@@ -120,7 +152,7 @@ This is an opaque string that can contain any valid Unicode data.
 Display names are \emph{not unique} and \emph{must never be used as identifiers}.
 Use \code{id} instead.
 
-For users, this is the user's full name as reported by the authenitcation
+For users, this is the user's full name as reported by the authentication
 provider.
 
 For teams, this is the team display name.
@@ -140,6 +172,17 @@ If \code{FALSE}, return \code{NULL} if not in cache.}
 \subsection{Returns}{
 String value of the display name.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{\dontrun{
+acc <- Account$current()
+acc$get_display_name()
+}
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Account-list_registry_projects"></a>}}
@@ -162,6 +205,17 @@ If \code{FALSE}, return \code{NULL} if not in cache.}
 \subsection{Returns}{
 List of \link[=RegistryProject]{projects} owned by this workspace.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{\dontrun{
+acc <- Account$current()
+acc$list_registry_projects()
+}
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Account-clone"></a>}}

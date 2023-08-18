@@ -13,10 +13,10 @@ String value of the \code{Authorization} HTTP header.
 Valid in workflow executions and after signing in using Latch CLI
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontrun{
 httr2::request("https://vacuole.latch.bio") \%>\%
   httr2::req_headers(Authorization = auth_header()) \%>\%
   httr2::req_dry_run()
-\dontshow{\}) # examplesIf}
+}
 }
 \keyword{internal}

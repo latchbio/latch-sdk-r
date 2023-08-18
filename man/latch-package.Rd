@@ -4,14 +4,15 @@
 \name{latch-package}
 \alias{latch}
 \alias{latch-package}
-\title{latch: LatchBio platform SDK for the R programming language}
+\title{latch: LatchBio Platform SDK for the R Programming Language}
 \description{
-Provides programmatic access to the LatchBio platform (https://latch.bio).
+Provides programmatic access to the LatchBio platform \url{https://latch.bio}.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/latchbio/latch-sdk-r}
+  \item \url{https://latchbio.github.io/latch-sdk-r/}
   \item Report bugs at \url{https://github.com/latchbio/latch-sdk-r/issues}
 }
 
