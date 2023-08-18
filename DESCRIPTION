@@ -1,14 +1,32 @@
 Package: latch
 Title: LatchBio platform SDK for the R programming language
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R:
-    person("Max", "Smolin", , "max@latch.bio", role = c("aut", "cre"),
-           comment = c(ORCID = "0009-0007-7944-9239"))
-Description: Provides programmatic access to the LatchBio platform (https://latch.bio)
+    c(
+        person("Max", "Smolin", , "max@latch.bio", role = c("aut", "cre"),
+            comment = c(ORCID = "0009-0007-7944-9239")),
+        person(given = "LatchBio, Inc.",
+             role = c("cph", "fnd"))
+    )
+Description: Provides programmatic access to the LatchBio platform (https://latch.bio).
+URL: https://github.com/latchbio/latch-sdk-r
+BugReports: https://github.com/latchbio/latch-sdk-r/issues
 License: CC0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Suggests: 
+Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Imports:
+    httr2,
+    httpuv,
+    magrittr,
+    readr,
+    rlang (>= 1.1.0),
+    stringr,
+    purrr,
+    R6,
+    coro,
+    clock,
+    jsonlite

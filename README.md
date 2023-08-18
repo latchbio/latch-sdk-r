@@ -8,12 +8,27 @@
 [![R-CMD-check](https://github.com/latchbio/latch-sdk-r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/latchbio/latch-sdk-r/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of latch is to …
-
 ## Installation
 
-You can install the development version of `latch` from
-[GitHub](https://github.com/) with:
+### Latest release from CRAN
+
+``` r
+pak::pak("latch")
+```
+
+or
+
+``` r
+install.packages("latch")
+```
+
+### Development version from GitHub
+
+``` r
+pak::pak("latchbio/latch-sdk-r")
+```
+
+or
 
 ``` r
 # install.packages("devtools")
@@ -22,33 +37,34 @@ devtools::install_github("latchbio/latch-sdk-r")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
 library(latch)
-## basic example code
+
+acc <- latch::Account$current()
+cat("Current account is ")
+acc$print()
+
+projects <- acc$list_registry_projects()
+cat("Latch Registry for", acc$get_display_name(), "\n")
+for (proj in projects) {
+  cat(proj$get_display_name(), "\n")
+  tables <- proj$list_tables()
+  for (table in tables) {
+    cat("  -", table$get_display_name(), "\n")
+  }
+}
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+## Copying/License
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+This software and text is quad-licensed and downstream users are free to
+use any of the provided licenses.
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+**Available licenses:**
 
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+| Name                     | Requirements | [OSI](https://opensource.org/) Approved | Notes                                                                  |
+|--------------------------|--------------|-----------------------------------------|------------------------------------------------------------------------|
+| [MIT](./mit.license)     | Attribution  | :white_check_mark: Yes                  | Most commonly recognized and understood                                |
+| [BSD0](./bsd0.license)   | None         | :white_check_mark: Yes                  | Unencumbered license allowed at Google                                 |
+| [CC0](./copying)         | None         | :x: No                                  | Preferred way of dedicating software to the public domain              |
+| [Unlicense](./unlicense) | None         | :white_check_mark: Yes                  | OSI approved public domain dedication. **Questionable legal standing** |

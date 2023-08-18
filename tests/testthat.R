@@ -9,4 +9,5 @@
 library(testthat)
 library(latch)
 
-test_check("latch")
+# todo(maximsmol): come up with tests (need mocks probably)
+# test_check("latch")

@@ -1,6 +1,11 @@
-^LICENSE\.md$
+^.*\.license$
+^copying$
+^unlicense$
 ^\.github$
 ^README\.Rmd$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^.pre-commit-config.yaml$
+^scratch$
+^todo\.md$

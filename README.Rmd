@@ -19,11 +19,29 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/latchbio/latch-sdk-r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/latchbio/latch-sdk-r/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of latch is to ...
+
 
 ## Installation
 
-You can install the development version of `latch` from [GitHub](https://github.com/) with:
+### Latest release from CRAN
+
+```r
+pak::pak("latch")
+```
+
+or
+
+```r
+install.packages("latch")
+```
+
+### Development version from GitHub
+
+```r
+pak::pak("latchbio/latch-sdk-r")
+```
+
+or
 
 ``` r
 # install.packages("devtools")
@@ -32,25 +50,40 @@ devtools::install_github("latchbio/latch-sdk-r")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
+```{r example, eval = FALSE}
 library(latch)
-## basic example code
+
+acc <- latch::Account$current()
+cat("Current account is ")
+acc$print()
+
+projects <- acc$list_registry_projects()
+cat("Latch Registry for", acc$get_display_name(), "\n")
+for (proj in projects) {
+  cat(proj$get_display_name(), "\n")
+  tables <- proj$list_tables()
+  for (table in tables) {
+    cat("  -", table$get_display_name(), "\n")
+  }
+}
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## Copying/License
 
-```{r cars}
-summary(cars)
-```
+This software and text is quad-licensed and downstream users are free to use any of the provided licenses.
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+**Available licenses:**
 
-You can also embed plots, for example:
+| Name           | Requirements | [OSI][1] Approved      | Notes                                                                  |
+| -------------- | ------------ | ---------------------- | ---------------------------------------------------------------------- |
+| [MIT][2]       | Attribution  | :white_check_mark: Yes | Most commonly recognized and understood                                |
+| [BSD0][3]      | None         | :white_check_mark: Yes | Unencumbered license allowed at Google                                 |
+| [CC0][4]       | None         | :x: No                 | Preferred way of dedicating software to the public domain              |
+| [Unlicense][5] | None         | :white_check_mark: Yes | OSI approved public domain dedication. **Questionable legal standing** |
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+[1]: https://opensource.org/
+[2]: ./mit.license
+[3]: ./bsd0.license
+[4]: ./copying
+[5]: ./unlicense
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
