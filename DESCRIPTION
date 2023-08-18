@@ -9,7 +9,7 @@ Authors@R:
              role = c("cph", "fnd"))
     )
 Description: Provides programmatic access to the LatchBio platform (https://latch.bio).
-URL: https://github.com/latchbio/latch-sdk-r
+URL: https://github.com/latchbio/latch-sdk-r, https://latchbio.github.io/latch-sdk-r/
 BugReports: https://github.com/latchbio/latch-sdk-r/issues
 License: CC0
 Encoding: UTF-8
