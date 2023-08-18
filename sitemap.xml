@@ -4,9 +4,6 @@
     <loc>/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
@@ -16,6 +13,60 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
+    <loc>/reference/Account-cash-current.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Account.html</loc>
+  </url>
+  <url>
+    <loc>/reference/LDataNode-cash-from_id.html</loc>
+  </url>
+  <url>
+    <loc>/reference/LDataNode.html</loc>
+  </url>
+  <url>
+    <loc>/reference/RegistryColumn.html</loc>
+  </url>
+  <url>
+    <loc>/reference/RegistryInvalidValue.html</loc>
+  </url>
+  <url>
+    <loc>/reference/RegistryProject.html</loc>
+  </url>
+  <url>
+    <loc>/reference/RegistryRecord.html</loc>
+  </url>
+  <url>
+    <loc>/reference/RegistryTable.html</loc>
+  </url>
+  <url>
+    <loc>/reference/auth_header.html</loc>
+  </url>
+  <url>
+    <loc>/reference/graphql_body.html</loc>
+  </url>
+  <url>
+    <loc>/reference/graphql_perform.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/latch-package.html</loc>
+  </url>
+  <url>
+    <loc>/reference/latch_request.html</loc>
+  </url>
+  <url>
+    <loc>/reference/reexports.html</loc>
+  </url>
+  <url>
+    <loc>/reference/registry_to_r_literal.html</loc>
+  </url>
+  <url>
+    <loc>/reference/vacuole_gql_perform.html</loc>
+  </url>
+  <url>
+    <loc>/todo.html</loc>
   </url>
 </urlset>
